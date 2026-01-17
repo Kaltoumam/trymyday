@@ -2,7 +2,9 @@ import { Row, Col, Card, Alert, Badge, Form, Button, InputGroup, Modal } from 'r
 import { useEffect, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useWallet } from '../context/WalletContext';
+import { useWallet } from '../context/WalletContext';
 import ProfileLayout from '../components/ProfileLayout';
+import API_BASE_URL from '../config';
 
 const Wallet = () => {
     const { user } = useAuth();
@@ -33,7 +35,7 @@ const Wallet = () => {
         }
 
         try {
-            const response = await fetch('http://localhost:3001/api/wallet/transfer', {
+            const response = await fetch(`${API_BASE_URL}/api/wallet/transfer`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

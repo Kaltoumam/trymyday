@@ -4,6 +4,7 @@ import { useData } from '../../context/DataContext';
 import { useAuth } from '../../context/AuthContext';
 import Barcode from 'react-barcode';
 import BarcodeScanner from '../../components/BarcodeScanner';
+import API_BASE_URL from '../../config';
 
 export const AdminOrders = () => {
     const { orders } = useData();
@@ -127,7 +128,7 @@ export const AdminOrders = () => {
     const sendEmailNotification = async (order, newStatus, note) => {
         try {
             console.log('📧 Sending email notification for order:', order.id);
-            const response = await fetch('http://localhost:3001/api/admin/order-email', {
+            const response = await fetch(`${API_BASE_URL}/api/admin/order-email`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -218,7 +219,7 @@ export const AdminOrders = () => {
         // 2. Process Real Refund via Backend
         try {
             console.log('💰 Triggering real refund for order:', order.id);
-            const response = await fetch('http://localhost:3001/api/admin/order-refund', {
+            const response = await fetch(`${API_BASE_URL}/api/admin/order-refund`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

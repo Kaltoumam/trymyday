@@ -1,4 +1,5 @@
 import { createContext, useState, useContext, useEffect } from 'react';
+import API_BASE_URL from '../config';
 
 const DataContext = createContext(null);
 
@@ -125,21 +126,21 @@ export const DataProvider = ({ children }) => {
         const fetchData = async () => {
             try {
                 // Fetch Products
-                const prodRes = await fetch('http://localhost:3001/api/products');
+                const prodRes = await fetch(`${API_BASE_URL}/api/products`);
                 if (prodRes.ok) {
                     const prodData = await prodRes.json();
                     setProducts(prodData);
                 }
 
                 // Fetch Orders
-                const orderRes = await fetch('http://localhost:3001/api/orders');
+                const orderRes = await fetch(`${API_BASE_URL}/api/orders`);
                 if (orderRes.ok) {
                     const orderData = await orderRes.json();
                     setOrders(orderData);
                 }
 
                 // Fetch Users (for Admin view)
-                const userRes = await fetch('http://localhost:3001/api/admin/wallet/users');
+                const userRes = await fetch(`${API_BASE_URL}/api/admin/wallet/users`);
                 if (userRes.ok) {
                     const userData = await userRes.json();
                     if (userData.success) {
@@ -179,7 +180,7 @@ export const DataProvider = ({ children }) => {
             // Optimistic update
             setProducts(prev => [...prev, newProduct]);
 
-            const response = await fetch('http://localhost:3001/api/products', {
+            const response = await fetch(`${API_BASE_URL}/api/products`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newProduct)
@@ -198,7 +199,7 @@ export const DataProvider = ({ children }) => {
         try {
             setProducts(prev => prev.map(p => p.id === id ? { ...p, ...updatedProduct } : p));
 
-            await fetch(`http://localhost:3001/api/products/${id}`, {
+            await fetch(`${API_BASE_URL}/api/products/${id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(updatedProduct)
@@ -212,7 +213,7 @@ export const DataProvider = ({ children }) => {
         try {
             setProducts(prev => prev.filter(p => p.id !== id));
 
-            await fetch(`http://localhost:3001/api/products/${id}`, {
+            await fetch(`${API_BASE_URL}/api/products/${id}`, {
                 method: 'DELETE'
             });
         } catch (error) {
@@ -245,7 +246,7 @@ export const DataProvider = ({ children }) => {
         setOrders(prevOrders => [newOrder, ...prevOrders]);
 
         try {
-            await fetch('http://localhost:3001/api/orders', {
+            await fetch(`${API_BASE_URL}/api/orders`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newOrder)
@@ -262,7 +263,7 @@ export const DataProvider = ({ children }) => {
         setOrders(prevOrders => prevOrders.map(o => o.id === id ? { ...o, ...updatedData } : o));
 
         try {
-            await fetch(`http://localhost:3001/api/orders/${id}/status`, {
+            await fetch(`${API_BASE_URL}/api/orders/${id}/status`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(updatedData)

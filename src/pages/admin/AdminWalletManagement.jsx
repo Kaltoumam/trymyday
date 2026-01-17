@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { useWallet } from '../../context/WalletContext';
 import { useNavigate } from 'react-router-dom';
+import API_BASE_URL from '../../config';
 
 const AdminWalletManagement = () => {
     const { user: authUser } = useAuth();
@@ -82,7 +83,7 @@ const AdminWalletManagement = () => {
             // 1. Appel API Backend
             let response;
             if (isManager) {
-                response = await fetch('http://localhost:3001/api/wallet/transfer', {
+                response = await fetch(`${API_BASE_URL}/api/wallet/transfer`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -93,7 +94,7 @@ const AdminWalletManagement = () => {
                     }),
                 });
             } else {
-                response = await fetch('http://localhost:3001/api/admin/wallet/credit', {
+                response = await fetch(`${API_BASE_URL}/api/admin/wallet/credit`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({

@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import { useAuth } from './AuthContext';
+import API_BASE_URL from '../config';
 
 const WalletContext = createContext();
 
@@ -23,7 +24,11 @@ export const WalletProvider = ({ children }) => {
 
         try {
             setLoading(true);
-            const response = await fetch(`http://localhost:3001/api/wallet/balance?email=${user.email}`);
+
+            // ... (existing imports)
+
+            // Inside the component
+            const response = await fetch(`${API_BASE_URL}/api/wallet/balance?email=${user.email}`);
             const data = await response.json();
 
             if (data.success) {
@@ -51,7 +56,7 @@ export const WalletProvider = ({ children }) => {
         if (!user) return;
 
         try {
-            const response = await fetch(`http://localhost:3001/api/wallet/transactions?email=${user.email}`);
+            const response = await fetch(`${API_BASE_URL}/api/wallet/transactions?email=${user.email}`);
             const data = await response.json();
 
             if (data.success) {
