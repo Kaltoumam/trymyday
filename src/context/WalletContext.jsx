@@ -25,9 +25,6 @@ export const WalletProvider = ({ children }) => {
         try {
             setLoading(true);
 
-            // ... (existing imports)
-
-            // Inside the component
             const response = await fetch(`${API_BASE_URL}/api/wallet/balance?email=${user.email}`);
             const data = await response.json();
 

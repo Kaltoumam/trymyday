@@ -283,7 +283,7 @@ const CheckoutContent = () => {
     }
 
     if (orderPlaced && completedOrder) {
-        // ... (Keep existing Success Page Logic) ...
+
         return (
             <Container className="py-5">
                 <Row className="justify-content-center">

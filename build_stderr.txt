@@ -1,0 +1,24 @@
+[31mx[39m Build failed in 477ms
+[31merror during build:
+[31m[vite:esbuild] Transform failed with 1 error:
+C:/Users/USER/OneDrive/Bureau/TRY MY DAY/src/pages/Wallet.jsx:5:9: ERROR: The symbol "useWallet" has already been declared[31m
+file: [36mC:/Users/USER/OneDrive/Bureau/TRY MY DAY/src/pages/Wallet.jsx:5:9[31m
+[33m
+[33mThe symbol "useWallet" has already been declared[33m
+3  |  import { useAuth } from '../context/AuthContext';
+4  |  import { useWallet } from '../context/WalletContext';
+5  |  import { useWallet } from '../context/WalletContext';
+   |           ^
+6  |  import ProfileLayout from '../components/ProfileLayout';
+7  |  import API_BASE_URL from '../config';
+[31m
+    at failureErrorWithLog (C:\Users\USER\OneDrive\Bureau\TRY MY DAY\node_modules\esbuild\lib\main.js:1472:15)
+    at C:\Users\USER\OneDrive\Bureau\TRY MY DAY\node_modules\esbuild\lib\main.js:755:50
+    at responseCallbacks.<computed> (C:\Users\USER\OneDrive\Bureau\TRY MY DAY\node_modules\esbuild\lib\main.js:622:9)
+    at handleIncomingPacket (C:\Users\USER\OneDrive\Bureau\TRY MY DAY\node_modules\esbuild\lib\main.js:677:12)
+    at Socket.readFromStdout (C:\Users\USER\OneDrive\Bureau\TRY MY DAY\node_modules\esbuild\lib\main.js:600:7)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)[39m
