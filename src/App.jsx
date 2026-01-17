@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, Link } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { DataProvider } from './context/DataContext';
 import { CartProvider } from './context/CartContext';
@@ -10,7 +10,23 @@ import Navigation from './components/Navbar';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import Shop from './pages/Shop';
+import Help from './pages/Help';
+import Cart from './pages/Cart';
+import Favorites from './pages/Favorites';
 import Register from './pages/Register';
+import Addresses from './pages/Addresses';
+import Cards from './pages/Cards';
+import ProductDetails from './pages/ProductDetails';
+import Checkout from './pages/Checkout';
+
+import Orders from './pages/Orders';
+import OrderDetails from './pages/OrderDetails';
+import UserInfo from './pages/UserInfo';
+import Reorder from './pages/Reorder';
+import Coupons from './pages/Coupons';
+import Messages from './pages/Messages';
+import Wallet from './pages/Wallet';
 
 // Admin Imports
 import AdminLayout from './pages/admin/AdminLayout';
@@ -21,29 +37,7 @@ import AdminUsers from './pages/admin/AdminUsers';
 import AdminFinance from './pages/admin/AdminFinance';
 import AdminWalletManagement from './pages/admin/AdminWalletManagement';
 
-// Placeholder components
-import Shop from './pages/Shop';
-import ProductDetails from './pages/ProductDetails';
-import Help from './pages/Help';
-
-
-// Placeholder components
-import Cart from './pages/Cart';
-import Checkout from './pages/Checkout';
-import Favorites from './pages/Favorites';
-import Profile from './pages/Profile';
-import Orders from './pages/Orders';
-import OrderDetails from './pages/OrderDetails';
-import Addresses from './pages/Addresses';
-import UserInfo from './pages/UserInfo';
-import Cards from './pages/Cards';
-import Reorder from './pages/Reorder';
-import Coupons from './pages/Coupons';
-import Messages from './pages/Messages';
-import Wallet from './pages/Wallet';
-const NotFound = () => <div className="container mt-5"><h2>Page non trouvée</h2></div>;
-
-
+const NotFound = () => <div className="container mt-5"><h2>Page non trouvée</h2><Link to="/">Retour Accueil</Link></div>;
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -73,6 +67,8 @@ function App() {
                                                 <Route path="/favorites" element={<Favorites />} />
                                                 <Route path="/login" element={<Login />} />
                                                 <Route path="/register" element={<Register />} />
+
+                                                {/* Profile Routes */}
                                                 <Route path="/profile" element={<Navigate to="/profile/orders" replace />} />
                                                 <Route path="/profile/info" element={<UserInfo />} />
                                                 <Route path="/profile/orders" element={<Orders />} />

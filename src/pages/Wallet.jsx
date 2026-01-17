@@ -2,7 +2,6 @@ import { Row, Col, Card, Alert, Badge, Form, Button, InputGroup, Modal } from 'r
 import { useEffect, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useWallet } from '../context/WalletContext';
-import { useWallet } from '../context/WalletContext';
 import ProfileLayout from '../components/ProfileLayout';
 import API_BASE_URL from '../config';
 

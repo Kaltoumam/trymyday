@@ -29,6 +29,25 @@ const ProductDetails = () => {
     const [showReviews, setShowReviews] = useState(false);
     const [selectionError, setSelectionError] = useState(null);
     const [showFullDescription, setShowFullDescription] = useState(false);
+    const [reviewImages, setReviewImages] = useState([]);
+
+    const handleImageUpload = (e) => {
+        const files = Array.from(e.target.files);
+        const imagePromises = files.map(file => {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = (event) => resolve(event.target.result);
+                reader.onerror = (error) => reject(error);
+                reader.readAsDataURL(file);
+            });
+        });
+
+        Promise.all(imagePromises)
+            .then(base64Images => {
+                setReviewImages(prev => [...prev, ...base64Images]);
+            })
+            .catch(error => console.error("Error uploading images:", error));
+    };
 
     // Mock options
     const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
@@ -197,10 +216,12 @@ const ProductDetails = () => {
             userName: user?.name || "Utilisateur",
             rating: userRating,
             comment: userComment,
+            images: reviewImages,
             date: new Date().toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
         };
         addReview(newReview);
         setUserComment('');
+        setReviewImages([]);
         setShowReviewForm(false);
     };
 
