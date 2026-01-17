@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --primary-color: #4bc7f4;
+    --trendyol-orange: #f27a1a;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+}
+
+#root {
+    width: 100%;
+}
+
+/* Custom Overrides */
+.text-danger {
+    color: var(--trendyol-orange) !important;
+}
+
+.btn-warning {
+    background-color: var(--trendyol-orange);
+    border-color: var(--trendyol-orange);
+    color: white !important;
+}
+
+.btn-warning:hover {
+    background-color: #d86b15;
+    border-color: #d86b15;
+}
+
+.nav-link:hover {
+    color: var(--trendyol-orange) !important;
+}
+
+/* Cart Item Animations */
+.cart-item-card {
+    transition: all 0.3s ease;
+}
+
+.cart-item-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Smooth transitions for buttons */
+.btn {
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Form input focus effects */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--trendyol-orange);
+    box-shadow: 0 0 0 0.2rem rgba(242, 122, 26, 0.25);
+}
+
+/* Badge animations */
+.badge {
+    transition: all 0.2s ease;
+}
+
+/* Alert animations */
+.alert {
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Card hover effects */
+.card {
+    transition: all 0.3s ease;
+}
+
+/* Sticky sidebar smooth scroll */
+.sticky-top {
+    transition: top 0.3s ease;
+}
+
+/* Loading spinner */
+.spinner-border {
+    color: var(--trendyol-orange);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Custom Navbar Dropdown fixes */
+.custom-nav-dropdown .dropdown-toggle::after {
+    display: none !important;
+}
+
+.custom-nav-dropdown .dropdown-toggle {
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    border: none !important;
+}
+
+.custom-nav-dropdown .dropdown-menu {
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 0.5rem;
+    margin-top: 10px;
+}
+
+.custom-nav-dropdown .dropdown-item {
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.custom-nav-dropdown .dropdown-item:hover {
+    background-color: rgba(242, 122, 26, 0.1);
+    color: var(--trendyol-orange);
+}
+
+/* Checkout Custom Utilities */
+.hover-border-warning:hover {
+    border-color: #ff6000 !important;
+}
+
+.hover-shadow-lg:hover {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.transition-all {
+    transition: all 0.25s ease-in-out !important;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.fw-800 {
+    font-weight: 800 !important;
+}
+
+.fw-600 {
+    font-weight: 600 !important;
+}
+
+.custom-radio .form-check-input:checked {
+    background-color: #ff6000;
+    border-color: #ff6000;
+}
+
+.border-dashed {
+    border-style: dashed !important;
+}
+
+.hover-opacity-100:hover {
+    opacity: 1 !important;
+}
+
+.navbar-container {
+    max-width: 1520px !important;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: var(--bs-gutter-x, 1rem);
+    padding-left: var(--bs-gutter-x, 1rem);
+}

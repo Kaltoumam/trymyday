@@ -1,0 +1,756 @@
+{
+  "users": [
+    {
+      "id": "user_1766678877834",
+      "email": "test@test.com",
+      "walletBalance": 20556.52,
+      "transactions": [
+        {
+          "id": "tx_1766679366372",
+          "type": "credit",
+          "amount": 1000,
+          "date": "2025-12-25T16:16:06.372Z",
+          "description": "Crédit admin",
+          "balanceAfter": 1000
+        },
+        {
+          "id": "tx_1766686314938",
+          "type": "debit",
+          "amount": 236.49,
+          "date": "2025-12-25T18:11:54.938Z",
+          "description": "Order payment order_1766686314928",
+          "balanceAfter": 763.51
+        },
+        {
+          "id": "tx_1766695079159",
+          "type": "debit",
+          "amount": 206.99,
+          "date": "2025-12-25T20:37:59.159Z",
+          "description": "Order payment ",
+          "balanceAfter": 556.52
+        },
+        {
+          "id": "tx_1766695625429",
+          "type": "credit",
+          "amount": 20000,
+          "date": "2025-12-25T20:47:05.429Z",
+          "description": "Crédit admin",
+          "balanceAfter": 20556.52
+        }
+      ]
+    },
+    {
+      "id": "user_1766679013512",
+      "email": "Trymyday235@gmail.com",
+      "walletBalance": 0,
+      "transactions": []
+    },
+    {
+      "id": "user_1767727664377",
+      "email": "kaltoumamoussamahamat@gmail.com",
+      "walletBalance": 100038499,
+      "transactions": [
+        {
+          "id": "tx_1767727664377",
+          "type": "credit",
+          "amount": 2000,
+          "date": "2026-01-06T19:27:44.377Z",
+          "description": "Crédit admin",
+          "balanceAfter": 2000
+        },
+        {
+          "id": "tx_1767731986332",
+          "type": "credit",
+          "amount": 1200,
+          "date": "2026-01-06T20:39:46.332Z",
+          "description": "Crédit admin",
+          "balanceAfter": 3200
+        },
+        {
+          "id": "tx_1767732331332",
+          "type": "credit",
+          "amount": 1000,
+          "date": "2026-01-06T20:45:31.332Z",
+          "description": "Crédit admin",
+          "balanceAfter": 4200
+        },
+        {
+          "id": "tx_1767732332431",
+          "type": "credit",
+          "amount": 1000,
+          "date": "2026-01-06T20:45:32.431Z",
+          "description": "Crédit admin",
+          "balanceAfter": 5200
+        },
+        {
+          "id": "tx_1767732333428",
+          "type": "credit",
+          "amount": 1000,
+          "date": "2026-01-06T20:45:33.428Z",
+          "description": "Crédit admin",
+          "balanceAfter": 6200
+        },
+        {
+          "id": "tx_1767732336660",
+          "type": "credit",
+          "amount": 1000,
+          "date": "2026-01-06T20:45:36.660Z",
+          "description": "Crédit admin",
+          "balanceAfter": 7200
+        },
+        {
+          "id": "tx_1767732337569",
+          "type": "credit",
+          "amount": 1000,
+          "date": "2026-01-06T20:45:37.569Z",
+          "description": "Crédit admin",
+          "balanceAfter": 8200
+        },
+        {
+          "id": "tx_1767732358965",
+          "type": "credit",
+          "amount": 1000,
+          "date": "2026-01-06T20:45:58.965Z",
+          "description": "Crédit admin",
+          "balanceAfter": 9200
+        },
+        {
+          "id": "tx_1767732360061",
+          "type": "credit",
+          "amount": 1000,
+          "date": "2026-01-06T20:46:00.061Z",
+          "description": "Crédit admin",
+          "balanceAfter": 10200
+        },
+        {
+          "id": "tx_1767732402297",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:46:42.297Z",
+          "description": "Crédit admin",
+          "balanceAfter": 10300
+        },
+        {
+          "id": "tx_1767732403434",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:46:43.434Z",
+          "description": "Crédit admin",
+          "balanceAfter": 10400
+        },
+        {
+          "id": "tx_1767732550497",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:49:10.497Z",
+          "description": "Crédit admin",
+          "balanceAfter": 10500
+        },
+        {
+          "id": "tx_1767732551319",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:49:11.319Z",
+          "description": "Crédit admin",
+          "balanceAfter": 10600
+        },
+        {
+          "id": "tx_1767732553439",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:49:13.439Z",
+          "description": "Crédit admin",
+          "balanceAfter": 10700
+        },
+        {
+          "id": "tx_1767732702019",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:42.019Z",
+          "description": "Crédit admin",
+          "balanceAfter": 10800
+        },
+        {
+          "id": "tx_1767732702903",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:42.903Z",
+          "description": "Crédit admin",
+          "balanceAfter": 10900
+        },
+        {
+          "id": "tx_1767732703842",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:43.842Z",
+          "description": "Crédit admin",
+          "balanceAfter": 11000
+        },
+        {
+          "id": "tx_1767732704495",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:44.495Z",
+          "description": "Crédit admin",
+          "balanceAfter": 11100
+        },
+        {
+          "id": "tx_1767732704550",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:44.550Z",
+          "description": "Crédit admin",
+          "balanceAfter": 11200
+        },
+        {
+          "id": "tx_1767732704627",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:44.627Z",
+          "description": "Crédit admin",
+          "balanceAfter": 11300
+        },
+        {
+          "id": "tx_1767732704702",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:44.702Z",
+          "description": "Crédit admin",
+          "balanceAfter": 11400
+        },
+        {
+          "id": "tx_1767732704823",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:44.823Z",
+          "description": "Crédit admin",
+          "balanceAfter": 11500
+        },
+        {
+          "id": "tx_1767732705145",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:45.145Z",
+          "description": "Crédit admin",
+          "balanceAfter": 11600
+        },
+        {
+          "id": "tx_1767732706266",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:46.266Z",
+          "description": "Crédit admin",
+          "balanceAfter": 11700
+        },
+        {
+          "id": "tx_1767732706311",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:46.311Z",
+          "description": "Crédit admin",
+          "balanceAfter": 11800
+        },
+        {
+          "id": "tx_1767732706346",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:46.346Z",
+          "description": "Crédit admin",
+          "balanceAfter": 11900
+        },
+        {
+          "id": "tx_1767732831735",
+          "type": "credit",
+          "amount": 1000,
+          "date": "2026-01-06T20:53:51.735Z",
+          "description": "Crédit admin",
+          "balanceAfter": 12900
+        },
+        {
+          "id": "tx_1767732832628",
+          "type": "credit",
+          "amount": 1000,
+          "date": "2026-01-06T20:53:52.628Z",
+          "description": "Crédit admin",
+          "balanceAfter": 13900
+        },
+        {
+          "id": "tx_1767732978034",
+          "type": "credit",
+          "amount": 1000,
+          "date": "2026-01-06T20:56:18.034Z",
+          "description": "Crédit admin",
+          "balanceAfter": 14900
+        },
+        {
+          "id": "tx_1767733007223",
+          "type": "credit",
+          "amount": 1000,
+          "date": "2026-01-06T20:56:47.223Z",
+          "description": "Crédit admin",
+          "balanceAfter": 15900
+        },
+        {
+          "id": "tx_1767733008181",
+          "type": "credit",
+          "amount": 1000,
+          "date": "2026-01-06T20:56:48.181Z",
+          "description": "Crédit admin",
+          "balanceAfter": 16900
+        },
+        {
+          "id": "tx_1767733042664",
+          "type": "credit",
+          "amount": 1000,
+          "date": "2026-01-06T20:57:22.664Z",
+          "description": "Crédit admin",
+          "balanceAfter": 17900
+        },
+        {
+          "id": "tx_1767733043531",
+          "type": "credit",
+          "amount": 1000,
+          "date": "2026-01-06T20:57:23.531Z",
+          "description": "Crédit admin",
+          "balanceAfter": 18900
+        },
+        {
+          "id": "tx_1767733297309",
+          "type": "credit",
+          "amount": 200,
+          "date": "2026-01-06T21:01:37.309Z",
+          "description": "Crédit admin",
+          "balanceAfter": 19100
+        },
+        {
+          "id": "tx_1767733515477",
+          "type": "credit",
+          "amount": 1000,
+          "date": "2026-01-06T21:05:15.477Z",
+          "description": "Crédit admin",
+          "balanceAfter": 20100
+        },
+        {
+          "id": "tx_1767733687550",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T21:08:07.550Z",
+          "description": "Crédit admin",
+          "balanceAfter": 20200
+        },
+        {
+          "id": "tx_1767733688536",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T21:08:08.536Z",
+          "description": "Crédit admin",
+          "balanceAfter": 20300
+        },
+        {
+          "id": "tx_1767733819143",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T21:10:19.143Z",
+          "description": "Crédit admin",
+          "balanceAfter": 20400
+        },
+        {
+          "id": "tx_1767733820261",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T21:10:20.261Z",
+          "description": "Crédit admin",
+          "balanceAfter": 20500
+        },
+        {
+          "id": "tx_1767733823001",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T21:10:23.001Z",
+          "description": "Crédit admin",
+          "balanceAfter": 20600
+        },
+        {
+          "id": "tx_1767734056855",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T21:14:16.855Z",
+          "description": "Crédit admin",
+          "balanceAfter": 20700
+        },
+        {
+          "id": "tx_1767734143317",
+          "type": "credit",
+          "amount": 2000,
+          "date": "2026-01-06T21:15:43.317Z",
+          "description": "Crédit admin",
+          "balanceAfter": 22700
+        },
+        {
+          "id": "tx_1767734240491",
+          "type": "credit",
+          "amount": 600,
+          "date": "2026-01-06T21:17:20.491Z",
+          "description": "Crédit admin",
+          "balanceAfter": 23300
+        },
+        {
+          "id": "tx_1767734412085",
+          "type": "credit",
+          "amount": 900,
+          "date": "2026-01-06T21:20:12.085Z",
+          "description": "Crédit admin",
+          "balanceAfter": 24200
+        },
+        {
+          "id": "tx_1767734534609",
+          "type": "credit",
+          "amount": 900,
+          "date": "2026-01-06T21:22:14.609Z",
+          "description": "Crédit admin",
+          "balanceAfter": 25100
+        },
+        {
+          "id": "tx_1767734559685",
+          "type": "credit",
+          "amount": 900,
+          "date": "2026-01-06T21:22:39.685Z",
+          "description": "Crédit admin",
+          "balanceAfter": 26000
+        },
+        {
+          "id": "tx_1767734718378",
+          "type": "credit",
+          "amount": 90,
+          "date": "2026-01-06T21:25:18.378Z",
+          "description": "Crédit admin",
+          "balanceAfter": 26090
+        },
+        {
+          "id": "tx_1767735035643",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T21:30:35.643Z",
+          "description": "Crédit admin",
+          "balanceAfter": 26190
+        },
+        {
+          "id": "tx_1767736152333",
+          "type": "credit",
+          "amount": 10,
+          "date": "2026-01-06T21:49:12.333Z",
+          "description": "Crédit admin",
+          "balanceAfter": 26200
+        },
+        {
+          "id": "tx_1767737272218",
+          "type": "credit",
+          "amount": 10,
+          "date": "2026-01-06T22:07:52.218Z",
+          "description": "Crédit admin",
+          "balanceAfter": 26210
+        },
+        {
+          "id": "tx_1767737327048",
+          "type": "credit",
+          "amount": 10,
+          "date": "2026-01-06T22:08:47.048Z",
+          "description": "Crédit admin",
+          "balanceAfter": 26220
+        },
+        {
+          "id": "tx_1767738291444",
+          "type": "credit",
+          "amount": 1,
+          "date": "2026-01-06T22:24:51.444Z",
+          "description": "Crédit admin",
+          "balanceAfter": 26221
+        },
+        {
+          "id": "tx_1767738340997",
+          "type": "credit",
+          "amount": 1,
+          "date": "2026-01-06T22:25:40.997Z",
+          "description": "Crédit admin",
+          "balanceAfter": 26222
+        },
+        {
+          "id": "tx_1767802236249",
+          "type": "credit",
+          "amount": 1,
+          "date": "2026-01-07T16:10:36.249Z",
+          "description": "Crédit admin",
+          "balanceAfter": 26223
+        },
+        {
+          "id": "refund_1767802502096",
+          "type": "credit",
+          "amount": 125,
+          "date": "2026-01-07T16:15:02.096Z",
+          "description": "Remboursement Commande #REFUND-TEST-123",
+          "balanceAfter": 26348
+        },
+        {
+          "id": "tx_1767803777415",
+          "type": "credit",
+          "amount": 20,
+          "date": "2026-01-07T16:36:17.415Z",
+          "description": "Crédit admin",
+          "balanceAfter": 26368
+        },
+        {
+          "id": "tx_1767803781779",
+          "type": "credit",
+          "amount": 20,
+          "date": "2026-01-07T16:36:21.779Z",
+          "description": "Crédit admin",
+          "balanceAfter": 26388
+        },
+        {
+          "id": "tx_1767805116314",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-07T16:58:36.314Z",
+          "description": "Merci KALTOUMA",
+          "balanceAfter": 26488
+        },
+        {
+          "id": "tx_1768184908500",
+          "type": "credit",
+          "amount": 12000,
+          "date": "2026-01-12T02:28:28.500Z",
+          "description": "Virement TRYMYDAY",
+          "balanceAfter": 38488
+        },
+        {
+          "id": "tx_1768185102728",
+          "type": "credit",
+          "amount": 1,
+          "date": "2026-01-12T02:31:42.728Z",
+          "description": "Virement TRYMYDAY",
+          "balanceAfter": 38489
+        },
+        {
+          "id": "tx_1768488876055",
+          "type": "credit",
+          "amount": 10,
+          "date": "2026-01-15T14:54:36.055Z",
+          "description": "Virement TRYMYDAY",
+          "balanceAfter": 38499
+        },
+        {
+          "id": "tx_1768673862874",
+          "type": "credit",
+          "amount": 100000000,
+          "date": "2026-01-17T18:17:42.874Z",
+          "description": "Virement TRYMYDAY",
+          "balanceAfter": 100038499
+        }
+      ]
+    },
+    {
+      "id": "user_1767728800492",
+      "email": "Trymyday235@gmail.com",
+      "walletBalance": 25299,
+      "transactions": [
+        {
+          "id": "tx_1767728800492",
+          "type": "credit",
+          "amount": 2000,
+          "date": "2026-01-06T19:46:40.492Z",
+          "description": "Crédit admin",
+          "balanceAfter": 2000
+        },
+        {
+          "id": "tx_1767730320677",
+          "type": "credit",
+          "amount": 1000,
+          "date": "2026-01-06T20:12:00.677Z",
+          "description": "Crédit admin",
+          "balanceAfter": 3000
+        },
+        {
+          "id": "tx_1767730497472",
+          "type": "credit",
+          "amount": 19999,
+          "date": "2026-01-06T20:14:57.472Z",
+          "description": "Crédit admin",
+          "balanceAfter": 22999
+        },
+        {
+          "id": "tx_1767732094969",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:41:34.969Z",
+          "description": "Crédit admin",
+          "balanceAfter": 23099
+        },
+        {
+          "id": "tx_1767732713808",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:53.808Z",
+          "description": "Crédit admin",
+          "balanceAfter": 23199
+        },
+        {
+          "id": "tx_1767732714628",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:54.628Z",
+          "description": "Crédit admin",
+          "balanceAfter": 23299
+        },
+        {
+          "id": "tx_1767732715524",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:55.524Z",
+          "description": "Crédit admin",
+          "balanceAfter": 23399
+        },
+        {
+          "id": "tx_1767732715651",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:55.651Z",
+          "description": "Crédit admin",
+          "balanceAfter": 23499
+        },
+        {
+          "id": "tx_1767732716682",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:56.682Z",
+          "description": "Crédit admin",
+          "balanceAfter": 23599
+        },
+        {
+          "id": "tx_1767732718104",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:58.104Z",
+          "description": "Crédit admin",
+          "balanceAfter": 23699
+        },
+        {
+          "id": "tx_1767732718225",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:58.225Z",
+          "description": "Crédit admin",
+          "balanceAfter": 23799
+        },
+        {
+          "id": "tx_1767732718379",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:58.379Z",
+          "description": "Crédit admin",
+          "balanceAfter": 23899
+        },
+        {
+          "id": "tx_1767732719349",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:59.349Z",
+          "description": "Crédit admin",
+          "balanceAfter": 23999
+        },
+        {
+          "id": "tx_1767732719408",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:59.408Z",
+          "description": "Crédit admin",
+          "balanceAfter": 24099
+        },
+        {
+          "id": "tx_1767732719467",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:59.467Z",
+          "description": "Crédit admin",
+          "balanceAfter": 24199
+        },
+        {
+          "id": "tx_1767732719524",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:59.524Z",
+          "description": "Crédit admin",
+          "balanceAfter": 24299
+        },
+        {
+          "id": "tx_1767732720961",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:52:00.961Z",
+          "description": "Crédit admin",
+          "balanceAfter": 24399
+        },
+        {
+          "id": "tx_1767734292960",
+          "type": "credit",
+          "amount": 900,
+          "date": "2026-01-06T21:18:12.960Z",
+          "description": "Crédit admin",
+          "balanceAfter": 25299
+        }
+      ]
+    },
+    {
+      "id": "user_1767909831683",
+      "email": "Trymyday235@gmail.com",
+      "walletBalance": 0,
+      "transactions": []
+    },
+    {
+      "id": "user_1767919609294",
+      "email": "Trymyday235@gmail.com",
+      "walletBalance": 0,
+      "transactions": []
+    },
+    {
+      "id": "user_1768315552865",
+      "email": "Trymyday235@gmail.com",
+      "walletBalance": 0,
+      "transactions": []
+    },
+    {
+      "id": "user_1768315584864",
+      "email": "admin@trymyday.com",
+      "walletBalance": 0,
+      "transactions": []
+    },
+    {
+      "id": "user_1768664356568",
+      "email": "soumamoussa134@gmail.com",
+      "walletBalance": 1001,
+      "transactions": [
+        {
+          "id": "tx_1768665970864",
+          "type": "credit",
+          "amount": 1000,
+          "date": "2026-01-17T16:06:10.864Z",
+          "description": "Virement TRYMYDAY",
+          "balanceAfter": 1000
+        },
+        {
+          "id": "tx_1768666432956",
+          "type": "credit",
+          "amount": 1,
+          "date": "2026-01-17T16:13:52.956Z",
+          "description": "Virement TRYMYDAY",
+          "balanceAfter": 1001
+        }
+      ]
+    },
+    {
+      "id": "user_1768676477560",
+      "email": "tymyday235@gmail.com",
+      "walletBalance": 0,
+      "transactions": []
+    }
+  ]
+}

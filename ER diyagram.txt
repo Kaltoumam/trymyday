@@ -1,0 +1,262 @@
+<mxfile host="app.diagrams.net" modified="2025-12-23T09:00:00.000Z" agent="Antigravity" version="22.1.0" etag="draw.io">
+  <diagram name="Gym ER Diagram" id="gym-er-diagram">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- GÜÇLÜ VARLIKLAR (Strong Entities) -->
+        
+        <!-- kullanici (Supertype) -->
+        <mxCell id="kullanici" value="&lt;b&gt;kullanici&lt;/b&gt;&lt;br&gt;─────────&lt;br&gt;&lt;u&gt;kullanici_id&lt;/u&gt; (PK)&lt;br&gt;ad&lt;br&gt;soyad&lt;br&gt;email&lt;br&gt;sifre&lt;br&gt;telefon&lt;br&gt;rol&lt;br&gt;kayit_tarihi" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#000000;strokeWidth=2;align=center;" vertex="1" parent="1">
+          <mxGeometry x="700" y="40" width="200" height="180" as="geometry" />
+        </mxCell>
+        
+        <!-- ISA Triangle for kullanici generalization -->
+        <mxCell id="isa_kullanici" value="&lt;b&gt;D&lt;/b&gt;" style="triangle;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;rotation=180;" vertex="1" parent="1">
+          <mxGeometry x="775" y="260" width="50" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Double line from kullanici to ISA (Total Completeness) -->
+        <mxCell id="line_kullanici_isa_1" value="" style="endArrow=none;html=1;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1" source="kullanici" target="isa_kullanici">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="line_kullanici_isa_2" value="" style="endArrow=none;html=1;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1" source="kullanici" target="isa_kullanici">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="5" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- admin (Subtype) -->
+        <mxCell id="admin" value="&lt;b&gt;admin&lt;/b&gt;&lt;br&gt;─────────&lt;br&gt;&lt;u&gt;admin_id&lt;/u&gt; (PK)&lt;br&gt;&lt;i&gt;kullanici_id (FK)&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#000000;strokeWidth=2;align=center;" vertex="1" parent="1">
+          <mxGeometry x="400" y="340" width="180" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- uye (Subtype) -->
+        <mxCell id="uye" value="&lt;b&gt;uye&lt;/b&gt;&lt;br&gt;─────────&lt;br&gt;&lt;u&gt;uye_id&lt;/u&gt; (PK)&lt;br&gt;&lt;i&gt;kullanici_id (FK)&lt;/i&gt;&lt;br&gt;dogum_tarihi&lt;br&gt;cinsiyet&lt;br&gt;aktif_mi" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#000000;strokeWidth=2;align=center;" vertex="1" parent="1">
+          <mxGeometry x="710" y="340" width="180" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- personel (Subtype) -->
+        <mxCell id="personel" value="&lt;b&gt;personel&lt;/b&gt;&lt;br&gt;─────────&lt;br&gt;&lt;u&gt;personel_id&lt;/u&gt; (PK)&lt;br&gt;&lt;i&gt;kullanici_id (FK)&lt;/i&gt;&lt;br&gt;pozisyon&lt;br&gt;maas" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#000000;strokeWidth=2;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="340" width="180" height="110" as="geometry" />
+        </mxCell>
+        
+        <!-- Lines from ISA to subtypes -->
+        <mxCell id="line_isa_admin" value="" style="endArrow=none;html=1;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1" source="isa_kullanici" target="admin">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="line_isa_uye" value="" style="endArrow=none;html=1;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1" source="isa_kullanici" target="uye">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="line_isa_personel" value="" style="endArrow=none;html=1;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1" source="isa_kullanici" target="personel">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- ISA Triangle for personel generalization -->
+        <mxCell id="isa_personel" value="&lt;b&gt;D&lt;/b&gt;" style="triangle;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;rotation=180;" vertex="1" parent="1">
+          <mxGeometry x="1085" y="490" width="50" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Single line from personel to ISA (Partial Completeness) -->
+        <mxCell id="line_personel_isa" value="" style="endArrow=none;html=1;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1" source="personel" target="isa_personel">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- antrenor (Subtype of personel) -->
+        <mxCell id="antrenor" value="&lt;b&gt;antrenor&lt;/b&gt;&lt;br&gt;─────────&lt;br&gt;&lt;u&gt;antrenor_id&lt;/u&gt; (PK)&lt;br&gt;&lt;i&gt;personel_id (FK)&lt;/i&gt;&lt;br&gt;uzmanlik&lt;br&gt;deneyim_yili" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#000000;strokeWidth=2;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="570" width="180" height="110" as="geometry" />
+        </mxCell>
+        
+        <!-- Line from ISA to antrenor -->
+        <mxCell id="line_isa_antrenor" value="" style="endArrow=none;html=1;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1" source="isa_personel" target="antrenor">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- uyelik_paketi (Strong Entity) -->
+        <mxCell id="uyelik_paketi" value="&lt;b&gt;uyelik_paketi&lt;/b&gt;&lt;br&gt;─────────&lt;br&gt;&lt;u&gt;paket_id&lt;/u&gt; (PK)&lt;br&gt;paket_adi&lt;br&gt;sure_ay&lt;br&gt;fiyat&lt;br&gt;aciklama" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#000000;strokeWidth=2;align=center;" vertex="1" parent="1">
+          <mxGeometry x="400" y="560" width="180" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- ders (Strong Entity) -->
+        <mxCell id="ders" value="&lt;b&gt;ders&lt;/b&gt;&lt;br&gt;─────────&lt;br&gt;&lt;u&gt;ders_id&lt;/u&gt; (PK)&lt;br&gt;ders_adi&lt;br&gt;kategori&lt;br&gt;zorluk_seviyesi&lt;br&gt;max_kapasite&lt;br&gt;sure_dk" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#000000;strokeWidth=2;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="560" width="180" height="140" as="geometry" />
+        </mxCell>
+        
+        <!-- ZAYIF VARLIKLAR (Weak Entities) - Double Border -->
+        
+        <!-- uyelik (Weak Entity) -->
+        <mxCell id="uyelik" value="&lt;b&gt;uyelik&lt;/b&gt;&lt;br&gt;─────────&lt;br&gt;&lt;u&gt;uyelik_id&lt;/u&gt; (PK)&lt;br&gt;&lt;i&gt;uye_id (FK)&lt;/i&gt;&lt;br&gt;&lt;i&gt;paket_id (FK)&lt;/i&gt;&lt;br&gt;baslangic_tarihi&lt;br&gt;bitis_tarihi&lt;br&gt;aktif_mi" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#000000;strokeWidth=4;align=center;" vertex="1" parent="1">
+          <mxGeometry x="400" y="760" width="180" height="140" as="geometry" />
+        </mxCell>
+        
+        <!-- ders_programi (Weak Entity) -->
+        <mxCell id="ders_programi" value="&lt;b&gt;ders_programi&lt;/b&gt;&lt;br&gt;─────────&lt;br&gt;&lt;u&gt;program_id&lt;/u&gt; (PK)&lt;br&gt;&lt;i&gt;ders_id (FK)&lt;/i&gt;&lt;br&gt;&lt;i&gt;antrenor_id (FK)&lt;/i&gt;&lt;br&gt;gun&lt;br&gt;saat&lt;br&gt;salon&lt;br&gt;aktif_mi" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#000000;strokeWidth=4;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="760" width="180" height="160" as="geometry" />
+        </mxCell>
+        
+        <!-- uye_katilim (Weak Entity) -->
+        <mxCell id="uye_katilim" value="&lt;b&gt;uye_katilim&lt;/b&gt;&lt;br&gt;─────────&lt;br&gt;&lt;u&gt;katilim_id&lt;/u&gt; (PK)&lt;br&gt;&lt;i&gt;program_id (FK)&lt;/i&gt;&lt;br&gt;&lt;i&gt;uye_id (FK)&lt;/i&gt;&lt;br&gt;tarih&lt;br&gt;katilim_durumu" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#000000;strokeWidth=4;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="760" width="180" height="130" as="geometry" />
+        </mxCell>
+        
+        <!-- uye_olcum (Weak Entity) -->
+        <mxCell id="uye_olcum" value="&lt;b&gt;uye_olcum&lt;/b&gt;&lt;br&gt;─────────&lt;br&gt;&lt;u&gt;olcum_id&lt;/u&gt; (PK)&lt;br&gt;&lt;i&gt;uye_id (FK)&lt;/i&gt;&lt;br&gt;tarih&lt;br&gt;kilo&lt;br&gt;boy_cm&lt;br&gt;yag_orani&lt;br&gt;notlar" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#000000;strokeWidth=4;align=center;" vertex="1" parent="1">
+          <mxGeometry x="710" y="560" width="180" height="150" as="geometry" />
+        </mxCell>
+        
+        <!-- odeme (Weak Entity) -->
+        <mxCell id="odeme" value="&lt;b&gt;odeme&lt;/b&gt;&lt;br&gt;─────────&lt;br&gt;&lt;u&gt;odeme_id&lt;/u&gt; (PK)&lt;br&gt;&lt;i&gt;uye_id (FK)&lt;/i&gt;&lt;br&gt;&lt;i&gt;uyelik_id (FK)&lt;/i&gt;&lt;br&gt;tutar&lt;br&gt;tarih&lt;br&gt;odeme_tipi&lt;br&gt;aciklama" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#000000;strokeWidth=4;align=center;" vertex="1" parent="1">
+          <mxGeometry x="710" y="760" width="180" height="160" as="geometry" />
+        </mxCell>
+        
+        <!-- bildirim (Weak Entity) -->
+        <mxCell id="bildirim" value="&lt;b&gt;bildirim&lt;/b&gt;&lt;br&gt;─────────&lt;br&gt;&lt;u&gt;bildirim_id&lt;/u&gt; (PK)&lt;br&gt;&lt;i&gt;uye_id (FK)&lt;/i&gt;&lt;br&gt;mesaj&lt;br&gt;tur&lt;br&gt;olusturma_tarihi" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#000000;strokeWidth=4;align=center;" vertex="1" parent="1">
+          <mxGeometry x="710" y="960" width="180" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- RELATIONSHIPS -->
+        
+        <!-- uye to uyelik (Identifying - Double Diamond) -->
+        <mxCell id="rel_uye_uyelik" value="sahip_olur" style="rhombus;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#000000;strokeWidth=4;" vertex="1" parent="1">
+          <mxGeometry x="620" y="620" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="line_uye_rel1" value="" style="endArrow=none;html=1;strokeColor=#000000;strokeWidth=2;endFill=0;startArrow=ERone;startFill=0;" edge="1" parent="1" source="uye" target="rel_uye_uyelik">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="line_rel1_uyelik" value="" style="endArrow=ERmany;html=1;strokeColor=#000000;strokeWidth=2;endFill=0;startArrow=none;startFill=0;" edge="1" parent="1" source="rel_uye_uyelik" target="uyelik">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- uyelik_paketi to uyelik (Strong - Single Diamond) -->
+        <mxCell id="rel_paket_uyelik" value="tanimlar" style="rhombus;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#000000;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="430" y="680" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="line_paket_rel2" value="" style="endArrow=none;html=1;strokeColor=#000000;strokeWidth=2;endFill=0;startArrow=ERone;startFill=0;" edge="1" parent="1" source="uyelik_paketi" target="rel_paket_uyelik">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="line_rel2_uyelik" value="" style="endArrow=ERmanyOptional;html=1;strokeColor=#000000;strokeWidth=2;endFill=0;startArrow=none;startFill=0;" edge="1" parent="1" source="rel_paket_uyelik" target="uyelik">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- uye to uye_olcum (Identifying - Double Diamond) -->
+        <mxCell id="rel_uye_olcum" value="olculur" style="rhombus;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#000000;strokeWidth=4;" vertex="1" parent="1">
+          <mxGeometry x="740" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="line_uye_rel3" value="" style="endArrow=none;html=1;strokeColor=#000000;strokeWidth=2;endFill=0;startArrow=ERone;startFill=0;" edge="1" parent="1" source="uye" target="rel_uye_olcum">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="line_rel3_olcum" value="" style="endArrow=ERmanyOptional;html=1;strokeColor=#000000;strokeWidth=2;endFill=0;startArrow=none;startFill=0;" edge="1" parent="1" source="rel_uye_olcum" target="uye_olcum">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- ders to ders_programi (Identifying - Double Diamond) -->
+        <mxCell id="rel_ders_program" value="icin_olusturulur" style="rhombus;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#000000;strokeWidth=4;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="710" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="line_ders_rel4" value="" style="endArrow=none;html=1;strokeColor=#000000;strokeWidth=2;endFill=0;startArrow=ERone;startFill=0;" edge="1" parent="1" source="ders" target="rel_ders_program">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="line_rel4_program" value="" style="endArrow=ERmany;html=1;strokeColor=#000000;strokeWidth=2;endFill=0;startArrow=none;startFill=0;" edge="1" parent="1" source="rel_ders_program" target="ders_programi">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- antrenor to ders_programi (Identifying - Double Diamond) -->
+        <mxCell id="rel_antrenor_program" value="verir" style="rhombus;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#000000;strokeWidth=4;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="680" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="line_antrenor_rel5" value="" style="endArrow=none;html=1;strokeColor=#000000;strokeWidth=2;endFill=0;startArrow=ERone;startFill=0;" edge="1" parent="1" source="antrenor" target="rel_antrenor_program">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="line_rel5_program" value="" style="endArrow=ERmanyOptional;html=1;strokeColor=#000000;strokeWidth=2;endFill=0;startArrow=none;startFill=0;" edge="1" parent="1" source="rel_antrenor_program" target="ders_programi">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- ders_programi to uye_katilim (Identifying - Double Diamond) -->
+        <mxCell id="rel_program_katilim" value="kayit_tutar" style="rhombus;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#000000;strokeWidth=4;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="795" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="line_program_rel6" value="" style="endArrow=none;html=1;strokeColor=#000000;strokeWidth=2;endFill=0;startArrow=ERone;startFill=0;" edge="1" parent="1" source="ders_programi" target="rel_program_katilim">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="line_rel6_katilim" value="" style="endArrow=ERmanyOptional;html=1;strokeColor=#000000;strokeWidth=2;endFill=0;startArrow=none;startFill=0;" edge="1" parent="1" source="rel_program_katilim" target="uye_katilim">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- uye to uye_katilim (Identifying - Double Diamond) -->
+        <mxCell id="rel_uye_katilim" value="katilir" style="rhombus;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#000000;strokeWidth=4;" vertex="1" parent="1">
+          <mxGeometry x="920" y="650" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="line_uye_rel7" value="" style="endArrow=none;html=1;strokeColor=#000000;strokeWidth=2;endFill=0;startArrow=ERone;startFill=0;" edge="1" parent="1" source="uye" target="rel_uye_katilim">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="line_rel7_katilim" value="" style="endArrow=ERmanyOptional;html=1;strokeColor=#000000;strokeWidth=2;endFill=0;startArrow=none;startFill=0;" edge="1" parent="1" source="rel_uye_katilim" target="uye_katilim">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- uye to odeme (Identifying - Double Diamond) -->
+        <mxCell id="rel_uye_odeme" value="yapar" style="rhombus;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#000000;strokeWidth=4;" vertex="1" parent="1">
+          <mxGeometry x="750" y="710" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="line_uye_rel8" value="" style="endArrow=none;html=1;strokeColor=#000000;strokeWidth=2;endFill=0;startArrow=ERone;startFill=0;" edge="1" parent="1" source="uye" target="rel_uye_odeme">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="line_rel8_odeme" value="" style="endArrow=ERmanyOptional;html=1;strokeColor=#000000;strokeWidth=2;endFill=0;startArrow=none;startFill=0;" edge="1" parent="1" source="rel_uye_odeme" target="odeme">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- uyelik to odeme (Strong - Single Diamond) -->
+        <mxCell id="rel_uyelik_odeme" value="icin_yapilir" style="rhombus;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#000000;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="600" y="830" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="line_uyelik_rel9" value="" style="endArrow=none;html=1;strokeColor=#000000;strokeWidth=2;endFill=0;startArrow=ERone;startFill=0;" edge="1" parent="1" source="uyelik" target="rel_uyelik_odeme">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="line_rel9_odeme" value="" style="endArrow=ERmanyOptional;html=1;strokeColor=#000000;strokeWidth=2;endFill=0;startArrow=none;startFill=0;" edge="1" parent="1" source="rel_uyelik_odeme" target="odeme">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- uye to bildirim (Identifying - Double Diamond) -->
+        <mxCell id="rel_uye_bildirim" value="alir" style="rhombus;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#000000;strokeWidth=4;" vertex="1" parent="1">
+          <mxGeometry x="750" y="920" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="line_uye_rel10" value="" style="endArrow=none;html=1;strokeColor=#000000;strokeWidth=2;endFill=0;startArrow=ERoneOptional;startFill=0;" edge="1" parent="1" source="uye" target="rel_uye_bildirim">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="line_rel10_bildirim" value="" style="endArrow=ERmanyOptional;html=1;strokeColor=#000000;strokeWidth=2;endFill=0;startArrow=none;startFill=0;" edge="1" parent="1" source="rel_uye_bildirim" target="bildirim">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Legend -->
+        <mxCell id="legend_title" value="&lt;b&gt;LEGEND / AÇIKLAMALAR&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="280" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend_strong" value="Güçlü Varlık (Strong Entity)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#000000;strokeWidth=2;align=left;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="280" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend_weak" value="Zayıf Varlık (Weak Entity)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#000000;strokeWidth=4;align=left;" vertex="1" parent="1">
+          <mxGeometry x="40" y="120" width="280" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend_strong_rel" value="Güçlü İlişki (Strong Relationship)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#000000;strokeWidth=2;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="160" width="130" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend_weak_rel" value="Tanımlayıcı İlişki (Identifying)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#000000;strokeWidth=4;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="190" y="160" width="130" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend_isa_d" value="D = Ayrık (Disjoint)&lt;br&gt;O = Çakışan (Overlap)" style="text;html=1;strokeColor=#000000;fillColor=#FFFFFF;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="220" width="140" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend_completeness" value="─── = Kısmi Bütünlük&lt;br&gt;═══ = Toplam Bütünlük" style="text;html=1;strokeColor=#000000;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="190" y="220" width="140" height="40" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
