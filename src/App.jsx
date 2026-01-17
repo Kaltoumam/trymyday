@@ -20,6 +20,7 @@ import Cards from './pages/Cards';
 import ProductDetails from './pages/ProductDetails';
 import Checkout from './pages/Checkout';
 
+import Profile from './pages/Profile';
 import Orders from './pages/Orders';
 import OrderDetails from './pages/OrderDetails';
 import UserInfo from './pages/UserInfo';
@@ -69,7 +70,7 @@ function App() {
                                                 <Route path="/register" element={<Register />} />
 
                                                 {/* Profile Routes */}
-                                                <Route path="/profile" element={<Navigate to="/profile/orders" replace />} />
+                                                <Route path="/profile" element={<Profile />} />
                                                 <Route path="/profile/info" element={<UserInfo />} />
                                                 <Route path="/profile/orders" element={<Orders />} />
                                                 <Route path="/profile/orders/:orderId" element={<OrderDetails />} />

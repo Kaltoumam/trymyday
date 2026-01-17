@@ -10,16 +10,36 @@ const Register = () => {
     const { register } = useAuth();
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        register(name, email, password);
-        navigate('/');
+        setError('');
+        setLoading(true);
+
+        try {
+            const success = await register(name, email, password);
+            if (success) {
+                navigate('/profile/orders');
+            } else {
+                setError('Erreur lors de l’inscription. Cet email est peut-être déjà utilisé.');
+            }
+        } catch (err) {
+            setError('Erreur de connexion au serveur');
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
         <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: '80vh' }}>
             <Card style={{ width: '450px' }} className="shadow-lg border-0">
                 <Card.Body className="p-5">
+                    <h2 className="text-center mb-4 fw-bold">Inscription</h2>
+
+                    {error && <Alert variant="danger" className="py-2 small">{error}</Alert>}
+
                     <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3">
                             <Form.Label className="fw-bold" style={{ fontSize: '1.1rem' }}>Nom complet</Form.Label>
@@ -30,6 +50,7 @@ const Register = () => {
                                 onChange={(e) => setName(e.target.value)}
                                 style={{ fontSize: '1rem', padding: '12px' }}
                                 required
+                                disabled={loading}
                             />
                         </Form.Group>
 
@@ -42,6 +63,7 @@ const Register = () => {
                                 onChange={(e) => setEmail(e.target.value)}
                                 style={{ fontSize: '1rem', padding: '12px' }}
                                 required
+                                disabled={loading}
                             />
                         </Form.Group>
 
@@ -54,11 +76,23 @@ const Register = () => {
                                 onChange={(e) => setPassword(e.target.value)}
                                 style={{ fontSize: '1rem', padding: '12px' }}
                                 required
+                                disabled={loading}
                             />
                         </Form.Group>
 
-                        <Button variant="warning" type="submit" className="w-100 py-3 fw-bold mb-3 text-white" style={{ borderRadius: '10px', fontSize: '1.1rem' }}>
-                            S'inscrire
+                        <Button
+                            variant="warning"
+                            type="submit"
+                            className="w-100 py-3 fw-bold mb-3 text-white d-flex align-items-center justify-content-center"
+                            style={{ borderRadius: '10px', fontSize: '1.1rem' }}
+                            disabled={loading}
+                        >
+                            {loading ? (
+                                <>
+                                    <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                                    Création du compte...
+                                </>
+                            ) : "S'inscrire"}
                         </Button>
                     </Form>
 

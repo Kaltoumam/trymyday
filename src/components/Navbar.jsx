@@ -93,7 +93,7 @@ const Navigation = () => {
                                     id="user-dropdown"
                                     className="custom-nav-dropdown border-0"
                                 >
-                                    <NavDropdown.Item as={Link} to="/profile/orders"><i className="bi bi-person-circle me-3 text-warning"></i> Mon Profil</NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to="/profile"><i className="bi bi-person-circle me-3 text-warning"></i> Mon Profil</NavDropdown.Item>
                                     {(user.role === 'admin' || user.role === 'manager' || user.role === 'expediteur') && (
                                         <NavDropdown.Item as={Link} to="/admin" className="fw-bold text-primary"><i className="bi bi-speedometer2 me-3"></i> Dashboard</NavDropdown.Item>
                                     )}
