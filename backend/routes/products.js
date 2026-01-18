@@ -39,7 +39,7 @@ router.post('/', async (req, res) => {
 
         // Ensure ID
         if (!newProduct.id) {
-            newProduct.id = Date.now();
+            newProduct.id = Math.floor(10000000 + Math.random() * 90000000).toString();
         }
 
         products.push(newProduct);

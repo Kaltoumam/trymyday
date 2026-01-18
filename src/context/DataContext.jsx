@@ -175,7 +175,8 @@ export const DataProvider = ({ children }) => {
 
     const addProduct = async (product) => {
         try {
-            const newProduct = { ...product, id: Date.now(), images: product.images || [product.image] };
+            const tempId = Math.floor(10000000 + Math.random() * 90000000).toString();
+            const newProduct = { ...product, id: tempId, images: product.images || [product.image] };
 
             // Optimistic update
             setProducts(prev => [...prev, newProduct]);
@@ -187,37 +188,47 @@ export const DataProvider = ({ children }) => {
             });
 
             if (!response.ok) {
-                // Revert on failure not implemented for simplicity, but acceptable for MPV
+                // Revert on failure
+                setProducts(prev => prev.filter(p => p.id !== tempId));
                 console.error("Failed to save product to backend");
+                return false;
             }
+            return true;
         } catch (error) {
             console.error("Error adding product:", error);
+            return false;
         }
     };
 
     const updateProduct = async (id, updatedProduct) => {
         try {
-            setProducts(prev => prev.map(p => p.id === id ? { ...p, ...updatedProduct } : p));
+            const idStr = id.toString();
+            setProducts(prev => prev.map(p => p.id.toString() === idStr ? { ...p, ...updatedProduct } : p));
 
-            await fetch(`${API_BASE_URL}/api/products/${id}`, {
+            const response = await fetch(`${API_BASE_URL}/api/products/${idStr}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(updatedProduct)
             });
+            return response.ok;
         } catch (error) {
             console.error("Error updating product:", error);
+            return false;
         }
     };
 
     const deleteProduct = async (id) => {
         try {
-            setProducts(prev => prev.filter(p => p.id !== id));
+            const idStr = id.toString();
+            setProducts(prev => prev.filter(p => p.id.toString() !== idStr));
 
-            await fetch(`${API_BASE_URL}/api/products/${id}`, {
+            const response = await fetch(`${API_BASE_URL}/api/products/${idStr}`, {
                 method: 'DELETE'
             });
+            return response.ok;
         } catch (error) {
             console.error("Error deleting product:", error);
+            return false;
         }
     };
 

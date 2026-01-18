@@ -123,7 +123,7 @@ const AdminProducts = () => {
     const [categoryFilter, setCategoryFilter] = useState('all');
     const [showLimit, setShowLimit] = useState(10);
 
-    const handleSave = () => {
+    const handleSave = async () => {
         // Ensure at least one image is present, otherwise use placeholder
         const productImages = currentProduct.images && currentProduct.images.length > 0
             ? currentProduct.images
@@ -150,11 +150,19 @@ const AdminProducts = () => {
             stock: Number(currentProduct.stock)
         };
 
+        let success = false;
         if (isEditing) {
-            updateProduct(currentProduct.id, productData);
+            success = await updateProduct(currentProduct.id, productData);
         } else {
-            addProduct(productData);
+            success = await addProduct(productData);
         }
+
+        if (success) {
+            alert(isEditing ? 'Produit modifié avec succès !' : 'Produit ajouté avec succès !');
+        } else {
+            alert('Erreur lors de l\'enregistrement du produit sur le serveur.');
+        }
+
         setShowModal(false);
         resetForm();
     };
@@ -419,9 +427,14 @@ const AdminProducts = () => {
                                         size="sm"
                                         variant="outline-danger"
                                         className="rounded-pill px-3"
-                                        onClick={() => {
+                                        onClick={async () => {
                                             if (window.confirm(`Êtes-vous sûr de vouloir supprimer "${product.name}" ?`)) {
-                                                deleteProduct(product.id);
+                                                const success = await deleteProduct(product.id);
+                                                if (success) {
+                                                    alert('Produit supprimé !');
+                                                } else {
+                                                    alert('Erreur lors de la suppression du produit.');
+                                                }
                                             }
                                         }}
                                     >
