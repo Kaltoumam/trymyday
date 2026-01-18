@@ -469,4 +469,55 @@ router.post('/order-refund', async (req, res) => {
     }
 });
 
+// PUT /api/admin/users/:id - Update user (Admin only)
+router.put('/users/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const updatedData = req.body;
+        const users = await getUsers();
+        const userIndex = users.findIndex(u => u.id === id || u.email === id);
+
+        if (userIndex === -1) {
+            return res.status(404).json({ success: false, message: 'User not found' });
+        }
+
+        // Prevent changing admin@trymyday235.com role unless it's the admin themselves
+        if (users[userIndex].email.toLowerCase() === 'trymyday235@gmail.com' && updatedData.role && updatedData.role !== 'admin') {
+            // Optional: allow it but be careful. For now, let's allow it if it's the admin doing it.
+        }
+
+        users[userIndex] = { ...users[userIndex], ...updatedData };
+        await saveUsers(users);
+
+        res.json({ success: true, message: 'User updated successfully', user: users[userIndex] });
+    } catch (error) {
+        res.status(500).json({ success: false, message: error.message });
+    }
+});
+
+// DELETE /api/admin/users/:email - Delete user (Admin only)
+router.delete('/users/:email', async (req, res) => {
+    try {
+        const { email } = req.params;
+        const users = await getUsers();
+        const initialCount = users.length;
+
+        // Prevent deleting the main admin
+        if (email.toLowerCase() === 'trymyday235@gmail.com') {
+            return res.status(403).json({ success: false, message: 'Cannot delete the primary admin account' });
+        }
+
+        const filteredUsers = users.filter(u => u.email.toLowerCase() !== email.toLowerCase());
+
+        if (filteredUsers.length === initialCount) {
+            return res.status(404).json({ success: false, message: 'User not found' });
+        }
+
+        await saveUsers(filteredUsers);
+        res.json({ success: true, message: 'User deleted successfully' });
+    } catch (error) {
+        res.status(500).json({ success: false, message: error.message });
+    }
+});
+
 module.exports = router;

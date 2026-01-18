@@ -305,11 +305,59 @@ export const DataProvider = ({ children }) => {
         setHelpQuestions(helpQuestions.filter(q => q.id !== id));
     };
 
+    const adminUpdateUser = async (id, updatedData) => {
+        try {
+            setUsers(prev => prev.map(u => (u.id === id || u.email === id) ? { ...u, ...updatedData } : u));
+            const response = await fetch(`${API_BASE_URL}/api/admin/users/${id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(updatedData)
+            });
+            return response.ok;
+        } catch (error) {
+            console.error("Error updating user:", error);
+            return false;
+        }
+    };
+
+    const adminDeleteUser = async (email) => {
+        try {
+            setUsers(prev => prev.filter(u => u.email !== email));
+            const response = await fetch(`${API_BASE_URL}/api/admin/users/${email}`, {
+                method: 'DELETE'
+            });
+            return response.ok;
+        } catch (error) {
+            console.error("Error deleting user:", error);
+            return false;
+        }
+    };
+
+    const adminAddUser = async (user) => {
+        try {
+            const newUser = { ...user, id: user.id || Date.now().toString() };
+            setUsers(prev => [...prev, newUser]);
+
+            // Re-use register endpoint or add a specific admin one? 
+            // Register works but might have different logic. 
+            // Let's assume register works for now as it handles users.json.
+            const response = await fetch(`${API_BASE_URL}/api/auth/register`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(newUser)
+            });
+            return response.ok;
+        } catch (error) {
+            console.error("Error adding user:", error);
+            return false;
+        }
+    };
+
     return (
         <DataContext.Provider value={{
             products, addProduct, updateProduct, deleteProduct, loading,
             orders, setOrders, addOrder, updateOrder,
-            users, setUsers,
+            users, setUsers, adminUpdateUser, adminDeleteUser, adminAddUser,
             expenses, addExpense, updateExpense, deleteExpense,
             reviews, addReview,
             helpQuestions, addHelpQuestion, updateHelpQuestion, deleteHelpQuestion

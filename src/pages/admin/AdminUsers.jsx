@@ -15,7 +15,7 @@ const generateUserId = () => {
 };
 
 const AdminUsers = () => {
-    const { users, setUsers } = useData();
+    const { users, setUsers, adminUpdateUser, adminDeleteUser, adminAddUser } = useData();
     const { user } = useAuth();
     const navigate = useNavigate();
 
@@ -67,7 +67,7 @@ const AdminUsers = () => {
     };
 
     // Save user (create or update)
-    const handleSave = () => {
+    const handleSave = async () => {
         if (!formData.name || !formData.email) {
             alert('Veuillez remplir tous les champs obligatoires');
             return;
@@ -75,19 +75,18 @@ const AdminUsers = () => {
 
         if (editingUser) {
             // Update existing user
-            const updatedUsers = users.map(u =>
-                u.email === editingUser.email
-                    ? {
-                        ...u,
-                        name: formData.name,
-                        email: formData.email,
-                        role: formData.role,
-                        ...(formData.password && { password: formData.password })
-                    }
-                    : u
-            );
-            setUsers(updatedUsers);
-            alert('Utilisateur modifié avec succès !');
+            const success = await adminUpdateUser(editingUser.id || editingUser.email, {
+                name: formData.name,
+                email: formData.email,
+                role: formData.role,
+                ...(formData.password && { password: formData.password })
+            });
+
+            if (success) {
+                alert('Utilisateur modifié avec succès !');
+            } else {
+                alert('Erreur lors de la modification de l\'utilisateur');
+            }
         } else {
             // Create new user
             if (!formData.password) {
@@ -102,7 +101,6 @@ const AdminUsers = () => {
             }
 
             const newUser = {
-                id: generateUserId(),
                 name: formData.name,
                 email: formData.email,
                 password: formData.password,
@@ -111,23 +109,32 @@ const AdminUsers = () => {
                 balance: 0,
                 avatar: '👤'
             };
-            setUsers([...users, newUser]);
-            alert('Utilisateur créé avec succès !');
+
+            const success = await adminAddUser(newUser);
+            if (success) {
+                alert('Utilisateur créé avec succès !');
+            } else {
+                alert('Erreur lors de la création de l\'utilisateur');
+            }
         }
 
         setShowModal(false);
     };
 
     // Delete user
-    const handleDelete = (user) => {
-        if (user.role === 'admin' && users.filter(u => u.role === 'admin').length === 1) {
-            alert('Impossible de supprimer le dernier administrateur !');
+    const handleDelete = async (user) => {
+        if (user.email.toLowerCase() === 'trymyday235@gmail.com') {
+            alert('Impossible de supprimer le compte administrateur principal !');
             return;
         }
 
-        if (window.confirm(`Êtes-vous sûr de vouloir supprimer ${user.name} ?`)) {
-            setUsers(users.filter(u => u.email !== user.email));
-            alert('Utilisateur supprimé avec succès !');
+        if (window.confirm(`Êtes-vous sûr de vouloir supprimer ${user.name || user.email} ?`)) {
+            const success = await adminDeleteUser(user.email);
+            if (success) {
+                alert('Utilisateur supprimé avec succès !');
+            } else {
+                alert('Erreur lors de la suppression de l\'utilisateur');
+            }
         }
     };
 
