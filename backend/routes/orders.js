@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs').promises;
 const path = require('path');
+const { sendEmail, emailTemplates } = require('../utils/emailService');
 
 const ORDERS_FILE = path.join(__dirname, '../data/orders.json');
 
@@ -61,6 +62,11 @@ router.post('/', async (req, res) => {
         orders.push(newOrder);
         await saveOrders(orders);
 
+        // Notify customer (Automatic Email)
+        sendEmail(emailTemplates.orderStatus(newOrder, newOrder.status))
+            .then(() => console.log('Order confirmation email sent'))
+            .catch(err => console.error('Failed to send confirmation email:', err));
+
         res.status(201).json(newOrder);
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -101,6 +107,11 @@ router.put('/:id/status', async (req, res) => {
 
         orders[index] = order;
         await saveOrders(orders);
+
+        // Notify customer (Automatic Email)
+        sendEmail(emailTemplates.orderStatus(order, status, note))
+            .then(() => console.log('Status update email sent'))
+            .catch(err => console.error('Failed to send status update email:', err));
 
         res.json(order);
     } catch (error) {

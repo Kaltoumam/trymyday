@@ -49,7 +49,7 @@ export const AdminOrders = () => {
                 </head>
                 <body>
                     <div class="ticket">
-                        <div class="header">TRY MY DAY</div>
+                        <div class="header">Trymyday</div>
                         <div class="header">Commande #${order.id}</div>
                         <div class="barcode">
                             ${barcodeSvg}
@@ -154,40 +154,24 @@ export const AdminOrders = () => {
     const saveStatusChange = async () => {
         if (!selectedOrder) return;
 
-        const now = new Date();
-        const timestamp = now.toLocaleString('fr-FR');
         const newStatus = document.getElementById('newStatus').value;
 
-        // Create timeline entry
-        const timelineEntry = {
-            date: timestamp,
-            oldStatus: selectedOrder.status,
-            newStatus: newStatus,
-            note: statusNote,
-            admin: 'Trymyday'
-        };
+        try {
+            // Call the shared updateOrder function from DataContext
+            // which now triggers the backend API AND the automatic email
+            await updateOrder(selectedOrder.id, {
+                status: newStatus,
+                note: statusNote,
+                admin: 'Trymyday',
+                trackingNumber: trackingNumber
+            });
 
-        // Update order
-        const updatedOrders = orders.map(o => {
-            if (o.id === selectedOrder.id) {
-                return {
-                    ...o,
-                    status: newStatus,
-                    trackingNumber: trackingNumber,
-                    timeline: [...(o.timeline || []), timelineEntry],
-                    lastUpdated: timestamp
-                };
-            }
-            return o;
-        });
-
-        localStorage.setItem('orders', JSON.stringify(updatedOrders));
-
-        // Send email notification to customer
-        await sendEmailNotification(selectedOrder, newStatus, statusNote);
-
-        setShowModal(false);
-        window.location.reload();
+            alert('Statut mis à jour avec succès !');
+            setShowModal(false);
+        } catch (error) {
+            console.error('Error updating status:', error);
+            alert('Erreur lors de la mise à jour du statut.');
+        }
     };
 
     const handleApproveCancellation = async (order) => {

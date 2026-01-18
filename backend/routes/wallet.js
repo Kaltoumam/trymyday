@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs').promises;
 const path = require('path');
+const { sendEmail, emailTemplates } = require('../utils/emailService');
 
 const USERS_FILE = path.join(__dirname, '../data/users.json');
 
@@ -209,6 +210,11 @@ router.post('/transfer', async (req, res) => {
         users[toIndex] = toUser;
 
         await saveUsers(users);
+
+        // Notify receiver
+        sendEmail(emailTemplates.walletCredit(toUser.email, amount, toUser.walletBalance))
+            .then(() => console.log('Transfer notification email sent to:', toUser.email))
+            .catch(err => console.error('Failed to send transfer notification:', err));
 
         res.json({
             success: true,
