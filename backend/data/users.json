@@ -40,15 +40,164 @@
       ]
     },
     {
-      "id": "user_1766679013512",
+      "id": "admin_1",
+      "name": "Trymyday",
       "email": "Trymyday235@gmail.com",
-      "walletBalance": 0,
-      "transactions": []
+      "role": "admin",
+      "walletBalance": 25299,
+      "joined": "2025-12-25",
+      "transactions": [
+        {
+          "id": "tx_1767728800492",
+          "type": "credit",
+          "amount": 2000,
+          "date": "2026-01-06T19:46:40.492Z",
+          "description": "Crédit admin",
+          "balanceAfter": 2000
+        },
+        {
+          "id": "tx_1767730320677",
+          "type": "credit",
+          "amount": 1000,
+          "date": "2026-01-06T20:12:00.677Z",
+          "description": "Crédit admin",
+          "balanceAfter": 3000
+        },
+        {
+          "id": "tx_1767730497472",
+          "type": "credit",
+          "amount": 19999,
+          "date": "2026-01-06T20:14:57.472Z",
+          "description": "Crédit admin",
+          "balanceAfter": 22999
+        },
+        {
+          "id": "tx_1767732094969",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:41:34.969Z",
+          "description": "Crédit admin",
+          "balanceAfter": 23099
+        },
+        {
+          "id": "tx_1767732713808",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:53.808Z",
+          "description": "Crédit admin",
+          "balanceAfter": 23199
+        },
+        {
+          "id": "tx_1767732714628",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:54.628Z",
+          "description": "Crédit admin",
+          "balanceAfter": 23299
+        },
+        {
+          "id": "tx_1767732715524",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:55.524Z",
+          "description": "Crédit admin",
+          "balanceAfter": 23399
+        },
+        {
+          "id": "tx_1767732715651",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:55.651Z",
+          "description": "Crédit admin",
+          "balanceAfter": 23499
+        },
+        {
+          "id": "tx_1767732716682",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:56.682Z",
+          "description": "Crédit admin",
+          "balanceAfter": 23599
+        },
+        {
+          "id": "tx_1767732718104",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:58.104Z",
+          "description": "Crédit admin",
+          "balanceAfter": 23699
+        },
+        {
+          "id": "tx_1767732718225",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:58.225Z",
+          "description": "Crédit admin",
+          "balanceAfter": 23799
+        },
+        {
+          "id": "tx_1767732718379",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:58.379Z",
+          "description": "Crédit admin",
+          "balanceAfter": 23899
+        },
+        {
+          "id": "tx_1767732719349",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:59.349Z",
+          "description": "Crédit admin",
+          "balanceAfter": 23999
+        },
+        {
+          "id": "tx_1767732719408",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:59.408Z",
+          "description": "Crédit admin",
+          "balanceAfter": 24099
+        },
+        {
+          "id": "tx_1767732719467",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:59.467Z",
+          "description": "Crédit admin",
+          "balanceAfter": 24199
+        },
+        {
+          "id": "tx_1767732719524",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:51:59.524Z",
+          "description": "Crédit admin",
+          "balanceAfter": 24299
+        },
+        {
+          "id": "tx_1767732720961",
+          "type": "credit",
+          "amount": 100,
+          "date": "2026-01-06T20:52:00.961Z",
+          "description": "Crédit admin",
+          "balanceAfter": 24399
+        },
+        {
+          "id": "tx_1767734292960",
+          "type": "credit",
+          "amount": 900,
+          "date": "2026-01-06T21:18:12.960Z",
+          "description": "Crédit admin",
+          "balanceAfter": 25299
+        }
+      ]
     },
     {
       "id": "user_1767727664377",
       "email": "kaltoumamoussamahamat@gmail.com",
       "walletBalance": 100038499,
+      "joined": "2026-01-06",
       "transactions": [
         {
           "id": "tx_1767727664377",
@@ -549,184 +698,21 @@
       ]
     },
     {
-      "id": "user_1767728800492",
-      "email": "Trymyday235@gmail.com",
-      "walletBalance": 25299,
-      "transactions": [
-        {
-          "id": "tx_1767728800492",
-          "type": "credit",
-          "amount": 2000,
-          "date": "2026-01-06T19:46:40.492Z",
-          "description": "Crédit admin",
-          "balanceAfter": 2000
-        },
-        {
-          "id": "tx_1767730320677",
-          "type": "credit",
-          "amount": 1000,
-          "date": "2026-01-06T20:12:00.677Z",
-          "description": "Crédit admin",
-          "balanceAfter": 3000
-        },
-        {
-          "id": "tx_1767730497472",
-          "type": "credit",
-          "amount": 19999,
-          "date": "2026-01-06T20:14:57.472Z",
-          "description": "Crédit admin",
-          "balanceAfter": 22999
-        },
-        {
-          "id": "tx_1767732094969",
-          "type": "credit",
-          "amount": 100,
-          "date": "2026-01-06T20:41:34.969Z",
-          "description": "Crédit admin",
-          "balanceAfter": 23099
-        },
-        {
-          "id": "tx_1767732713808",
-          "type": "credit",
-          "amount": 100,
-          "date": "2026-01-06T20:51:53.808Z",
-          "description": "Crédit admin",
-          "balanceAfter": 23199
-        },
-        {
-          "id": "tx_1767732714628",
-          "type": "credit",
-          "amount": 100,
-          "date": "2026-01-06T20:51:54.628Z",
-          "description": "Crédit admin",
-          "balanceAfter": 23299
-        },
-        {
-          "id": "tx_1767732715524",
-          "type": "credit",
-          "amount": 100,
-          "date": "2026-01-06T20:51:55.524Z",
-          "description": "Crédit admin",
-          "balanceAfter": 23399
-        },
-        {
-          "id": "tx_1767732715651",
-          "type": "credit",
-          "amount": 100,
-          "date": "2026-01-06T20:51:55.651Z",
-          "description": "Crédit admin",
-          "balanceAfter": 23499
-        },
-        {
-          "id": "tx_1767732716682",
-          "type": "credit",
-          "amount": 100,
-          "date": "2026-01-06T20:51:56.682Z",
-          "description": "Crédit admin",
-          "balanceAfter": 23599
-        },
-        {
-          "id": "tx_1767732718104",
-          "type": "credit",
-          "amount": 100,
-          "date": "2026-01-06T20:51:58.104Z",
-          "description": "Crédit admin",
-          "balanceAfter": 23699
-        },
-        {
-          "id": "tx_1767732718225",
-          "type": "credit",
-          "amount": 100,
-          "date": "2026-01-06T20:51:58.225Z",
-          "description": "Crédit admin",
-          "balanceAfter": 23799
-        },
-        {
-          "id": "tx_1767732718379",
-          "type": "credit",
-          "amount": 100,
-          "date": "2026-01-06T20:51:58.379Z",
-          "description": "Crédit admin",
-          "balanceAfter": 23899
-        },
-        {
-          "id": "tx_1767732719349",
-          "type": "credit",
-          "amount": 100,
-          "date": "2026-01-06T20:51:59.349Z",
-          "description": "Crédit admin",
-          "balanceAfter": 23999
-        },
-        {
-          "id": "tx_1767732719408",
-          "type": "credit",
-          "amount": 100,
-          "date": "2026-01-06T20:51:59.408Z",
-          "description": "Crédit admin",
-          "balanceAfter": 24099
-        },
-        {
-          "id": "tx_1767732719467",
-          "type": "credit",
-          "amount": 100,
-          "date": "2026-01-06T20:51:59.467Z",
-          "description": "Crédit admin",
-          "balanceAfter": 24199
-        },
-        {
-          "id": "tx_1767732719524",
-          "type": "credit",
-          "amount": 100,
-          "date": "2026-01-06T20:51:59.524Z",
-          "description": "Crédit admin",
-          "balanceAfter": 24299
-        },
-        {
-          "id": "tx_1767732720961",
-          "type": "credit",
-          "amount": 100,
-          "date": "2026-01-06T20:52:00.961Z",
-          "description": "Crédit admin",
-          "balanceAfter": 24399
-        },
-        {
-          "id": "tx_1767734292960",
-          "type": "credit",
-          "amount": 900,
-          "date": "2026-01-06T21:18:12.960Z",
-          "description": "Crédit admin",
-          "balanceAfter": 25299
-        }
-      ]
-    },
-    {
-      "id": "user_1767909831683",
-      "email": "Trymyday235@gmail.com",
-      "walletBalance": 0,
-      "transactions": []
-    },
-    {
-      "id": "user_1767919609294",
-      "email": "Trymyday235@gmail.com",
-      "walletBalance": 0,
-      "transactions": []
-    },
-    {
-      "id": "user_1768315552865",
-      "email": "Trymyday235@gmail.com",
-      "walletBalance": 0,
-      "transactions": []
-    },
-    {
       "id": "user_1768315584864",
+      "name": "Admin",
       "email": "admin@trymyday.com",
+      "role": "admin",
       "walletBalance": 0,
+      "joined": "2026-01-09",
       "transactions": []
     },
     {
       "id": "user_1768664356568",
+      "name": "Souma Moussa",
       "email": "soumamoussa134@gmail.com",
+      "role": "client",
       "walletBalance": 1001,
+      "joined": "2026-01-17",
       "transactions": [
         {
           "id": "tx_1768665970864",
@@ -748,8 +734,11 @@
     },
     {
       "id": "user_1768676477560",
+      "name": "Test User",
       "email": "tymyday235@gmail.com",
+      "role": "client",
       "walletBalance": 0,
+      "joined": "2026-01-17",
       "transactions": []
     }
   ]

@@ -22,17 +22,18 @@ async function saveUsers(users) {
 router.post('/register', async (req, res) => {
     try {
         const { name, email, password } = req.body;
+        const normalizedEmail = email.toLowerCase();
         const users = await getUsers();
 
-        if (users.find(u => u.email === email)) {
+        if (users.find(u => u.email.toLowerCase() === normalizedEmail)) {
             return res.status(400).json({ message: 'Email already exists' });
         }
 
         const newUser = {
             id: Date.now().toString(),
             name,
-            email,
-            password, // In a real app, hash this!
+            email: normalizedEmail,
+            password,
             role: 'client',
             walletBalance: 0,
             joined: new Date().toISOString().split('T')[0],
@@ -52,14 +53,13 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
     try {
         const { email, password } = req.body;
+        const normalizedEmail = email.toLowerCase();
         const users = await getUsers();
 
-        // Special Admin Bypass check (from old AuthContext)
-        // If it's the admin email, ensure they have admin role
-        if (email.toLowerCase() === 'trymyday235@gmail.com') {
+        // Special Admin Bypass check
+        if (normalizedEmail === 'trymyday235@gmail.com') {
             let adminUser = users.find(u => u.email.toLowerCase() === 'trymyday235@gmail.com');
             if (!adminUser) {
-                // Create admin if missing
                 adminUser = {
                     id: 'admin_1',
                     name: 'Trymyday',
@@ -74,23 +74,20 @@ router.post('/login', async (req, res) => {
                 await saveUsers(users);
             } else if (adminUser.role !== 'admin') {
                 adminUser.role = 'admin';
-                adminUser.name = 'Trymyday'; // Enforce name
-                const idx = users.findIndex(u => u.email === adminUser.email);
+                adminUser.name = 'Trymyday';
+                const idx = users.findIndex(u => u.email.toLowerCase() === normalizedEmail);
                 users[idx] = adminUser;
                 await saveUsers(users);
             }
             return res.json({ ...adminUser, balance: adminUser.walletBalance });
         }
 
-        const user = users.find(u => u.email === email); // && u.password === password
-        // In this simple version we might assume password check is needed if provided, 
-        // but legacy code often mocked it. Let's check password if user has one.
+        const user = users.find(u => u.email.toLowerCase() === normalizedEmail);
 
         if (!user) {
             return res.status(401).json({ message: 'Invalid credentials' });
         }
 
-        // If user has password field, check it (simple string compare for now per legacy style)
         if (user.password && user.password !== password) {
             return res.status(401).json({ message: 'Invalid credentials' });
         }
