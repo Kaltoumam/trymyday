@@ -30,7 +30,7 @@ router.post('/register', async (req, res) => {
         }
 
         const newUser = {
-            id: Date.now().toString(),
+            id: Math.floor(10000000 + Math.random() * 90000000).toString(),
             name,
             email: normalizedEmail,
             password,
