@@ -2,8 +2,11 @@
   "users": [
     {
       "id": "user_1766678877834",
+      "name": "Test User",
       "email": "test@test.com",
+      "role": "client",
       "walletBalance": 20556.52,
+      "joined": "2025-12-25",
       "transactions": [
         {
           "id": "tx_1766679366372",
@@ -42,7 +45,7 @@
     {
       "id": "admin_1",
       "name": "Trymyday",
-      "email": "Trymyday235@gmail.com",
+      "email": "trymyday235@gmail.com",
       "role": "admin",
       "walletBalance": 25299,
       "joined": "2025-12-25",
@@ -195,7 +198,9 @@
     },
     {
       "id": "user_1767727664377",
+      "name": "Kaltouma",
       "email": "kaltoumamoussamahamat@gmail.com",
+      "role": "client",
       "walletBalance": 100038499,
       "joined": "2026-01-06",
       "transactions": [
@@ -699,9 +704,9 @@
     },
     {
       "id": "user_1768315584864",
-      "name": "Admin",
+      "name": "Admin External",
       "email": "admin@trymyday.com",
-      "role": "admin",
+      "role": "client",
       "walletBalance": 0,
       "joined": "2026-01-09",
       "transactions": []

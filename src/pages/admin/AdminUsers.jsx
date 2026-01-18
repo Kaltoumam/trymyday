@@ -95,8 +95,8 @@ const AdminUsers = () => {
                 return;
             }
 
-            // Check if email already exists
-            if (users.some(u => u.email === formData.email)) {
+            // Check if email already exists (case-insensitive)
+            if (users.some(u => u.email.toLowerCase() === formData.email.toLowerCase())) {
                 alert('Cet email est déjà utilisé');
                 return;
             }
@@ -281,7 +281,6 @@ const AdminUsers = () => {
                                 onChange={(e) => setFormData({ ...formData, role: e.target.value })}
                             >
                                 <option value="client">Client</option>
-                                <option value="admin">Administrateur</option>
                                 <option value="manager">Manager</option>
                                 <option value="expediteur">Expéditeur</option>
                             </Form.Select>
